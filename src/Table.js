@@ -15,6 +15,13 @@ class Table extends React.Component {
     }
   }
 
+  static getDerivedStateFromProps (nextProps, prevState) {
+    if (nextProps.data.length !== prevState.data.length) {
+      return { data: nextProps.data, numPages: Math.ceil(nextProps.data.length / nextProps.perPage) }
+    }
+    return null
+  }
+
   get head() {
     return (
       <thead>

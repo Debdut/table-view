@@ -6,7 +6,7 @@ import { snakeToCamel } from './util'
 function User ({ userList, properties, back }) {
   const id = parseInt(useParams().id, 10)
   
-  let user
+  let user = {}
   for (let index = 0; index < userList.length; index++) {
     const tmpUser = userList[index]
     if (tmpUser.id === id) {
